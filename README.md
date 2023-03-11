@@ -4,7 +4,7 @@ This script automates the creation of alerts on TradingView based on user-define
 
 ## <b> Getting Started </b>
 
-To get started with this script, you will need to have an active (pro/premuim) TradingView account
+To get started with this script, you will need to have an active (pro/premium) TradingView account
 
 ## <b> Usage </b> 
 
