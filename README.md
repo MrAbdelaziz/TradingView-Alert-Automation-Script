@@ -1,1 +1,2 @@
-# Tradingview-Multiple-Alerts
+# TradingView Alert Automation Script
+
