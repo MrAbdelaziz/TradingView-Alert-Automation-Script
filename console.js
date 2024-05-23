@@ -13,6 +13,7 @@
 // [:::::[                      ]:::::] █ ▀▀▀ █ ██▄ ▀ ▄▄▄▄▄█ ▀  █
 // [[[[[[[[[[[[[[[      ]]]]]]]]]]]]]]] ▀▀▀▀▀▀▀ ▀▀ ▀▀▀▀   ▀  ▀▀▀▀
 
+
 var x = $x;
 var alerts = 0;
 var condition = "";
@@ -66,7 +67,7 @@ async function currentAlertsCount() {
 
 
         try {
-            currentAlerts = parseInt(x('//div[contains(@style,"--counter-indicator-value")]//div[1]')[0].textContent)
+            currentAlerts = parseInt(x('//div[contains(@class,"counterItem-")]//div[contains(@class,"count-")]')[1].textContent)
         } catch (error) {
             currentAlerts = 0
         }
@@ -87,8 +88,8 @@ async function addAlert() {
 
         Finder = true;
 
-        if (await waitUntil("//div[contains(@class,'itemContent')]/span")) {
-            condition = x("//div[contains(@class,'itemContent')]/span")[0].innerText.trim()
+        if (await waitUntil("//div[contains(@class,'itemContent-')]//div[contains(@class,'itemTitle-')]/span")) {
+            condition = x("//div[contains(@class,'itemContent-')]//div[contains(@class,'itemTitle-')]/span")[0].innerText.trim()
         }
 
         console.log(`using ${condition} as condition `)
@@ -233,8 +234,8 @@ async function AddScrennerAlerts() {
 
 try {
 
-    var buttons = x("//div[contains(@data-outside-boundary-for,'alerts-create-edit-dialog')]//div[contains(@class,'buttons')]")[0]
-    var button_class = x("//div[contains(@data-outside-boundary-for,'alerts-create-edit-dialog')]//div[contains(@class,'buttons')]//button")[0]
+    var buttons = x("//div[contains(@data-name,'alerts-create-edit-dialog')]//div[contains(@class,'buttons')]")[0]
+    var button_class = x("//div[contains(@data-name,'alerts-create-edit-dialog')]//div[contains(@class,'buttons')]//button")[0]
     button_class = $(button_class).attr("class");
 
     const LeftDiv = document.createElement("div");
